@@ -6,6 +6,7 @@
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-image-magnify": "^2.1.0",
     "react-scripts": "1.0.14"
   },
   "scripts": {
@@ -17,7 +18,6 @@
     "watch-less": "grunt watch"
   },
   "devDependencies": {
-    "boostrap": "^2.0.0",
     "bootstrap": "^3.3.7",
     "grunt": "^1.0.1",
     "grunt-contrib-less": "^1.4.1",

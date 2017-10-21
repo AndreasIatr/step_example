@@ -1,20 +1,24 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import koala from './images/Koala.jpg';
+import koala_s from './images/Koala_s.jpg';
 import penguins from './images/Penguins.jpg';
+import penguins_s from './images/Penguins_s.jpg';
+import tulips from './images/Tulips.jpg';
+import tulips_s from './images/Tulips_s.jpg';
 import './App.css';
 import StepButtonComponent from './StepButtonComponent';
+import ReactImageMagnify from 'react-image-magnify/dist/es/ReactImageMagnify';
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             images: {
-                1: koala,
-                2: penguins,
-                3: logo
+                1: [koala, koala_s],
+                2: [penguins, penguins_s],
+                3: [tulips, tulips_s]
             },
-            imageSrc: logo
+            step: 1
         };
     }
 
@@ -32,7 +36,10 @@ class App extends Component {
 
                     <div className='row'>
                         <p className='App-intro'>
-                            This is just an example, choose step
+                            This is just an example, choose step.
+                        </p>
+                        <p className='App-intro'>
+                            You can hover over (or touch and drag on mobile) an image to zoom
                         </p>
                     </div>
 
@@ -61,8 +68,21 @@ class App extends Component {
                             </div>
                         </div>
                         <div className='col-xs-8 top-5'>
-                            <img src={this.state.images[this.state.step]} className='img-rounded img-responsive'
-                                 alt=''/>
+                            <ReactImageMagnify
+                                {...{
+                                    smallImage: {
+                                        isFluidWidth: true,
+                                        alt: '',
+                                        src: this.state.images[this.state.step][1],
+                                    },
+                                    largeImage: {
+                                        alt: '',
+                                        src: this.state.images[this.state.step][0],
+                                        width: 1024,
+                                        height: 768,
+                                    },
+                                    enlargedImagePosition: 'over'
+                                }}/>
                         </div>
                     </div>
                 </div>
