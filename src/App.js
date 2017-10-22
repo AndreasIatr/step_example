@@ -1,13 +1,13 @@
-import React, {Component} from "react";
-import koala from "./images/Koala.jpg";
-import koala_s from "./images/Koala_s.jpg";
-import penguins from "./images/Penguins.jpg";
-import penguins_s from "./images/Penguins_s.jpg";
-import tulips from "./images/Tulips.jpg";
-import tulips_s from "./images/Tulips_s.jpg";
-import "./App.css";
-import StepButton from "./StepButton";
-import MainView from "./MainView";
+import React, {Component} from 'react';
+import koala from './images/Koala.jpg';
+import koala_s from './images/Koala_s.jpg';
+import penguins from './images/Penguins.jpg';
+import penguins_s from './images/Penguins_s.jpg';
+import tulips from './images/Tulips.jpg';
+import tulips_s from './images/Tulips_s.jpg';
+import './App.css';
+import StepButton from './StepButton';
+import MainView from './MainView';
 
 class App extends Component {
     constructor(props) {
@@ -37,9 +37,6 @@ class App extends Component {
                     <div className='row'>
                         <p className='App-intro'>
                             This is just an example, choose step.
-                        </p>
-                        <p className='App-intro'>
-                            You can hover over (or touch and drag on mobile) an image to zoom
                         </p>
                     </div>
 

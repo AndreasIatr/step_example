@@ -13,13 +13,18 @@ export class Chart extends Component {
     }
 
     componentDidMount() {
-        let chart = new this.props.chartConstructor(document.getElementById("chart"));
+        let chart = new this.props.chartConstructor(document.getElementById(this.props.name));
         this.setState({chart: chart});
+        if (this.props.eventHandlers) {
+            this.props.eventHandlers.forEach(handler => {
+                window.google.visualization.events.addListener(chart, handler[0], handler[1](chart))
+            });
+        }
     }
 
     render() {
         return (
-            <div className="Chart" id="chart">
+            <div className="Chart" id={this.props.name}>
                 Loading chart...
             </div>
         );
