@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import ReactImageMagnify from "react-image-magnify/dist/es/ReactImageMagnify";
+import ReactImageMagnify from 'react-image-magnify/dist/es/ReactImageMagnify';
 import ScriptCache from './ScriptCache.js';
-import {Chart} from "./Chart.js";
+import {Chart} from './Chart.js';
 
 class MainView extends Component {
 
@@ -62,9 +62,9 @@ class MainView extends Component {
 
     render() {
         return (
-            <div className="row">
+            <div className='row'>
                 { this.props.step < 4 ?
-                    <div className="col-xs-12">
+                    <div className='col-xs-12'>
                         <p className='App-intro'>
                             You can hover over (or touch and drag on mobile) an image to zoom
                         </p>
@@ -90,9 +90,9 @@ class MainView extends Component {
                             Select a row in the table and the corresponding point in the line chart will be highlighted in green or red based on whether the company was over in YOY revenue
                         </p>
                         { this.state.chartsLoaded &&
-                        <div className="col-xs-12">
+                        <div className='col-xs-12'>
                             <Chart
-                                name="table-chart"
+                                name='table-chart'
                                 chartConstructor={window.google.visualization.Table}
                                 dataTable={this.state.dataTableForTableChart}
                                 options={this.state.options}
@@ -104,9 +104,9 @@ class MainView extends Component {
                         </div>
                         }
                         { this.state.chartsLoaded &&
-                        <div className="col-xs-12" style={{height: "300px"}}>
+                        <div className='col-xs-12' style={{height: '300px'}}>
                             <Chart
-                                name="line-chart"
+                                name='line-chart'
                                 chartConstructor={window.google.visualization.LineChart}
                                 dataTable={this.state.dataTableForLineChart}
                                 options={
@@ -137,7 +137,7 @@ class MainView extends Component {
                         dataTableForLineChart.setValue(i, 2, null);
                     }
                     let overYOY = dataTableForTableChart.getValue(selectedItem.row, 2);
-                    dataTableForLineChart.setValue(selectedItem.row, 2, "point {size: 10; fill-color: " + (overYOY ? "green" : "red"));
+                    dataTableForLineChart.setValue(selectedItem.row, 2, 'point {size: 10; fill-color: ' + (overYOY ? 'green' : 'red'));
                     appComponent.setState({dataTableForLineChart: dataTableForLineChart});
                 }
             };
