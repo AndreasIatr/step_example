@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import koala from './images/Koala.jpg';
-import koala_s from './images/Koala_s.jpg';
-import penguins from './images/Penguins.jpg';
-import penguins_s from './images/Penguins_s.jpg';
-import tulips from './images/Tulips.jpg';
-import tulips_s from './images/Tulips_s.jpg';
-import './App.css';
-import StepButtonComponent from './StepButtonComponent';
-import ReactImageMagnify from 'react-image-magnify/dist/es/ReactImageMagnify';
+import React, {Component} from "react";
+import koala from "./images/Koala.jpg";
+import koala_s from "./images/Koala_s.jpg";
+import penguins from "./images/Penguins.jpg";
+import penguins_s from "./images/Penguins_s.jpg";
+import tulips from "./images/Tulips.jpg";
+import tulips_s from "./images/Tulips_s.jpg";
+import "./App.css";
+import StepButton from "./StepButton";
+import MainView from "./MainView";
 
 class App extends Component {
     constructor(props) {
@@ -46,43 +46,39 @@ class App extends Component {
                     <div className='row'>
                         <div className='col-xs-4'>
                             <div className='row top-5'>
-                                <StepButtonComponent
+                                <StepButton
                                     step={1}
                                     isActive={this.state.step === 1}
                                     onClick={this.goToStep}
                                 />
                             </div>
                             <div className='row top-5'>
-                                <StepButtonComponent
+                                <StepButton
                                     step={2}
                                     isActive={this.state.step === 2}
                                     onClick={this.goToStep}
                                 />
                             </div>
                             <div className='row top-5'>
-                                <StepButtonComponent
+                                <StepButton
                                     step={3}
                                     isActive={this.state.step === 3}
                                     onClick={this.goToStep}
                                 />
                             </div>
+                            <div className='row top-5'>
+                                <StepButton
+                                    step={4}
+                                    isActive={this.state.step === 4}
+                                    onClick={this.goToStep}
+                                />
+                            </div>
                         </div>
                         <div className='col-xs-8 top-5'>
-                            <ReactImageMagnify
-                                {...{
-                                    smallImage: {
-                                        isFluidWidth: true,
-                                        alt: '',
-                                        src: this.state.images[this.state.step][1],
-                                    },
-                                    largeImage: {
-                                        alt: '',
-                                        src: this.state.images[this.state.step][0],
-                                        width: 1024,
-                                        height: 768,
-                                    },
-                                    enlargedImagePosition: 'over'
-                                }}/>
+                            <MainView
+                            images={this.state.images}
+                            step={this.state.step}
+                            />
                         </div>
                     </div>
                 </div>

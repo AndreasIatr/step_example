@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class StepButtonComponent extends Component {
+class StepButton extends Component {
 
     handleClick = () => this.props.onClick(this.props.step);
 
@@ -15,4 +15,4 @@ class StepButtonComponent extends Component {
         );
     }
 }
-export default StepButtonComponent;
+export default StepButton;
